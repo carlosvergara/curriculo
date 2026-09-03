@@ -1,0 +1,212 @@
+---
+name: Carlos
+surname: Vergara Hernández
+position: "Bioestadístico"
+address: # Mejor dejar fuera la dirección
+email: "carlos.vergara@uv.es" # Cambio la dirección de correo
+github: carlosvergara
+profilepic: "./cvh.jpg"
+orcid: "0000-0002-7263-856X"
+date: "`r format(Sys.time(), '%B %Y')`"
+aboutme: "Bioestadístico con conocimientos sanitarios, en epidemiología y metodología de investigación"
+urlcolor: blue
+output: 
+  vitae::moderncv:
+    theme: classic
+header-includes:
+  - \usepackage{microtype}
+  - \usepackage{xurl}
+  - \setlength{\emergencystretch}{2em}
+  - \Urlmuskip=0mu plus 1mu
+---
+
+Actualizado `r Sys.Date()`
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+```
+
+# Biografía
+
+A nivel académico, estudié la diplomatura en Enfermería (2007, Universidad de Valencia) y realicé un máster en Ciencias de Enfermería (2011, Universidad de Alicante), tras lo que decidí reorientar mi vida y comencé a interesarme en la bioestadística. En ese momento realicé el máster en Bioestadística (2016, Universidad de Valencia), lo que me abrió las puertas a trabajar en el área de desigualdades en salud en la fundación Fisabio, entrando en contacto con brillantes estadísticos especialistas en estadística espacial, espacio-temporal y modelado jerárquico bayesiano aplicado a la salud.
+
+En el ámbito laboral, y tras haber ejercido durante algunos años como enfermero, he disfrutado de diversos contratos laborales como técnico de investigación e investigador, a cargo de proyectos de investigación desarrollados en la Universidad de Valencia y en la fundación Fisabio. En la actualidad, trabajo como estadístico en el servicio de estudios estadísticos de la fundación Fisabio.
+
+Disfruto especialmente al trabajar con problemas que tengan un componente computacional, de forma que pueda explotar mi pasión por R. En este sentido, he colaborado en la elaboración de algunos paquetes de R y de aplicaciones construidas usando dicho software (concretamente dos atlas de mortalidad).
+
+# Educación
+
+```{r}
+library(vitae)
+library(tibble)
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,# ~ nota,
+  # "Doctorando en Estadística y Optimización", "2017-", "Universidad de Valencia", "Valencia, España", # "Estudios en curso.",
+  "Máster en Bioestadística", "2014-16", "Universidad de Valencia", "Valencia, España", #"Nota media: 7.6.",
+  "Máster En Ciencias de Enfermería", "2009-11", "Universidad de Alicante", "Alicante, España", #"Nota media: 8.14.",
+  "Diplomatura de Enfermería", "2004-07", "Universidad de Valencia", "Valencia, España", #"Nota media: 7.2."
+) %>% 
+  detailed_entries(
+    # why = nota,
+    Degree,
+    Year,
+    Institution,
+    Where
+  )
+```
+
+\pagebreak
+
+# Formación complementaria
+
+```{r}
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where, ~ detalle,
+      "Modelización de regresión de series temporales con R como herramienta para identificar impactos sanitarios y socioculturales de factores ambientales (25 horas)", "2024", "Universitat Jaume I", "Castellón, España", list(NA)
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where)
+
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where, ~ detalle,
+  "Cursos de formación predoctoral recibidos (60 horas)", "2017-2018", "Universidad de Valencia", "Valencia, España", list(
+    "La redacción de artículos científicos.",
+    "La evaluación de la actividad investigadora y publicación científica en abierto.",
+    "Citas e impacto: Evaluación de la actividad investigadora en ciencias y ciencias de la salud.",
+    "RefWorks 2.0 para gestión de la bibliografía en ciencias y ciencias de la salud."
+  )
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where, why = detalle)
+
+
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where, ~ detalle,
+  "Taller de revisiones sistemáticas (6,1 créditos, acreditado por CFC-SNS)", "2013", "Centro Colaborador Español del Joanna Briggs Institute", "Madrid, España", list(NA),
+  "Curso sobre uso de guías de práctica clínica (5,5 créditos, acreditado por CFC-SNS)", "2013", "Atención Primaria en la Red", "Valencia, España", list(NA)
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where)
+```
+
+
+# Experiencia docente
+
+```{r}
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where, ~ detalle,
+  "Profesor asociado de universidad", "2020-act", "Departamento de enfermería, Universidad de Valencia", "Valencia, España", list(
+    "34331 – Bioestadística y TTICs.",
+    "34369 – Bioestadística y TIC aplicadas a las ciencias de la salud.",
+    "34390 – Trabajo final de grado del grado de enfermería (dirección de múltiples TFGs)."
+  ),
+  "Docente", "2023-act", "Escuela Valenciana de Estudios de la Salud", "Valencia, España", list(
+    "Diplomado en Salud Pública",
+    "Curso Superior de Salud Pública: Materia 1 - Salud Pública Avanzada",
+    "Curso Superior de Salud Pública: Materia 2 - Metodologías y Herramientas de Investigación en Salud"
+  ),
+  "Docente", "2019", "Escuela Valenciana de Estudios de la Salud", "Valencia, España", "Curso 31901401A: Análisis estadístico aplicado con R-Commander.",
+  "Docente", "2013", "Escuela Valenciana de Estudios de la Salud", "Valencia, España", "Curso 31301350A: PubMed y la gestión bibliográfica."
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where, why = detalle)
+```
+
+# Experiencia profesional e investigadora
+
+```{r}
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where, ~ detalle,
+  "T3 -- Técnico de investigación / Técnico estadístico", "2022-act", "Servicio de estudios estadísticos, Fisabio", "Valencia, España", list(
+    "Gestión y supervisión del servicio.",
+    "Soporte estadístico a grupos de investigación acreditados.",
+    "Programación estadística en R."
+  ),
+  "Investigador bioestadístico", "2020-2022", "Área de Investigación en Vacunas, Fisabio", "Valencia, España", list(
+    "Association between influenza and risk of cardiovascular disease in the Valencian ageing population using Real World Data.",
+    "ACCESS: vACcine Covid-19 monitoring readinESS.",
+    "VIGIRA: Ensayo clínico de fase IV, aleatorizado, doble ciego, controlado, en niños de 12 a 35 meses, de la vacuna contra la gripe estacional para estimar la eficacia frente a la gripe y frente a otras infecciones respiratorias."
+  ),
+  "Técnico estadístico", "2017-20", "Área de Desigualdades en Salud, Fisabio", "Valencia, España", list(
+    "Desigualdades socioeconómicas y medioambientales en la distribución geográfica de la mortalidad en grandes ciudades de España (1996-2015): MEDEA3.",
+    "Atlas de Mortalidad del Proyecto MEDEA3 (MEDEAPP).",
+    "Atlas Nacional de Mortalidad en España (ANDEES)."
+  ),
+  "Técnico estadístico", "2016-17", "Área de Desigualdades en Salud, Fisabio", "Valencia, España", "Estudio de focos puntuales sobre la relación entre instalaciones náutico-deportivas y la mortalidad por cáncer de pulmón y EPOC.",
+  "Técnico de investigación", "2015-2016", "Unidad Mixta de Investigación en Nutrición y Salud Pública, Fisabio-UVEG", "Valencia, España", "Estudio sobre el estilo de vida y la salud del recién nacido.",
+  "Investigador no doctor", "2016-17", "Departamento de Medicina Preventiva y Salud Pública, Universidad de Valencia", "Valencia, España", "Influencia del embarazo y parto en el riesgo de desarrollo de niños y adolescentes con Trastornos del Espectro Autista.",
+  "Técnico medio de apoyo a la investigación", "2012-14", "Departamento de Ingeniería Electrónica, Universidad de Valencia", "Valencia, España", "Imagen térmica infrarroja como herramienta diagnóstica de fracturas óseas infantiles.",
+  "Enfermero", "2007-12", "Agencia Valenciana de Salud", "Valencia, España", "Diversos contratos como enfermero en Atención Primaria."
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where, why = detalle)
+```
+
+
+# Otros datos de interés
+
+- Informática
+  - Entorno Linux (Arch Linux y Ubuntu).
+  - Conocimientos de ofimática: LibreOffice, \LaTeX \space y Rmarkdown.
+  - Usuario del sistema de información geográfica QGIS.
+  - Gestión de proyectos y control de versiones con Git y GitHub.
+
+- Estadística
+  - Manejo experto de R, BUGS, JAGS y NIMBLE.
+  - Conocimiento de INLA y Stan.
+  - Coautor de los paquetes de R [`medear`](https://github.com/fisabio/medear) (soporte para el proyecto MEDEA3) y [`pbugs`](https://github.com/fisabio/pbugs) (paralelización de WinBUGS desde R).
+  - Experiencia en técnicas estadísticas avanzadas en el entorno R durante los contratos de investigación: modelado jerárquico bayesiano, técnicas de suavizado espacial y espacio-temporal (con MCMC e INLA).
+  - Dominio del paquete `rmarkdown` y familiarizado con la creación de plantillas. Coautor del paquete de R [`fisabio`](https://github.com/estadistica-fisabio/fisabio) con plantillas adaptadas a Fisabio
+  - Aplicaciones Shiny con R:
+    - Coautor del Atlas Nacional de Mortalidad de España ([`ANDEES`](http://andees.fisabio.san.gva.es/)).
+    - Coautor del Atlas de Mortalidad MEDEA3 ([`MEDEAPP`](https://www.uv.es/medea/medeapp.html)).
+  - Experiencia en la gestión de grandes bases de datos sanitarias (mortalidad, consultas de atención primaria, módulo farmacéutico, CMBD).
+  - Experiencia en el uso de REDCap como cuaderno electrónico de recogida de datos, incluyendo reglas de validación y comprobación de los datos introducidos.
+  
+- Gestión bibliográfica
+  - Amplia experiencia en consultas avanzadas de MEDLINE, EMBASE, Scopus y Web of Science.
+  - Usuario de Zotero.
+  
+- Idiomas
+  - Certificat de Coneixements de Valencià Grau Mitjà (C1), per la JQCV.
+  
+- Asistencia a congresos científicos:
+  - 2018, XXXVI Reunión Científica de la SEE, Lisboa.
+  - 2019, XVII Spanish Biometric Conference and the VII Ibero-American Biometric Meeting CEB-EIB, Valencia.
+  - 2019, XXXVII Reunión Científica de la SEE, Oviedo.
+
+# Publicaciones
+
+## Artículos
+
+- Torres Górriz, M. C., Borrás Cuartero, J., Viedma Ayllón, P., Sánchez Hernández, A., **Vergara-Hernández, C.**, Gil Viciano, I., & Enrique, E. (2026). Comparison of rapid and same-day desensitization protocols in hypersensitivity reactions to platinum and taxanes: A retrospective cohort study. *Frontiers in Allergy, 7*, 1751512. https://doi.org/10.3389/falgy.2026.1751512
+-Fons-Martinez, J., Murciano-Gamborino, C., Ferrer-Albero, C., **Vergara-Hernández, C.**, & Diez-Domingo, J. (2025). Digital Informed Consent/Assent in Clinical Trials Among Pregnant Women, Minors, and Adults: Multicountry Cross-Sectional Evaluation of Comprehension and Satisfaction. *JMIR Human Factors, 12*(1), e65569. doi: 10.2196/65569
+- **Vergara-Hernández, C.**, Marí-Dell’Olmo, M., Oliveras, L., & Martinez-Beneito, M. A. (2025). Taking advantage of sampling designs in spatial small-area survey studies. *Statistical Modelling, 25*(2), 170-188. doi: 10.1177/1471082X231226287
+- Willame, C., Dodd, C., Durán, C., Elbers, R., Gini, R., Bartolini, C., Paoletti, O., Wang, L., Ehrenstein, V., Kahlert, J., Haug, U., Schink, T., Diez-Domingo, J., Mira-Iglesias, A., Carreras, J., **Vergara-Hernández, C.**, Giaquinto, C., Barbieri, E., Stona, L., ... Sturkenboom, M. (2023). Background rates of 41 adverse events of special interest for COVID-19 vaccines in 10 European healthcare databases—An ACCESS cohort study. *Vaccine, 41*(1), 251-262. doi: 10.1016/j.vaccine.2022.11.031
+- Marí-Dell’Olmo, M., Oliveras, L., **Vergara-Hernández, C.**, Artacoz, L., Borrell, C., Gotsens, M., Palència, L., López, M. J., & Martínez-Beneito, M. A. (2022). Geographical inequalities in energy poverty in a Mediterranean city: Using small-area Bayesian spatial models. *Energy Reports, 8*, 1249-59. doi: 10.1016/j.egyr.2021.12.025
+- Muñoz-Ramírez, S., Escribano-López, B., Rodrigo-Casares, V., **Vergara-Hernández, C.**, Gil-Mary, D., Sorribes-Monrabal, I., Garcés-Sánchez, M., Muñoz-Del-Barrio, M.-J., Albors-Fernández, A.-M., Úbeda-Sansano, M.-I., Planelles-Cantarino, M.-V., Largo-blanco, E.-M., Suárez-Vicent, E., García-Rubio, J., Bruijning-Verhagen, P., Orrico-Sánchez, A., & Díez-Domingo, J. (2021). Feasibility of a hybrid clinical trial for respiratory virus detection in toddlers during the influenza season. *BMC Medical Research Methodology, 21*(1), 273. doi: 10.1186/s12874-021-01474-9
+- Martinez-Beneito, M. A., **Vergara-Hernández, C.**, Botella-Rocamora, P., Corpas-Burgos, F., Pérez-Panadés, J., Zurriaga, Ó., Aldasoro, E., Borrell, C., Cabeza, E., Cirera, L., Delfrade Osinaga, J., Fernández-Somoano, A., Gandarillas, A., Lorenzo Ruano, P., Marí-Dell’Olmo, M., Nolasco, A., Prieto-Salceda, M., Ramis, R., Rodríguez-Sanz, M., & Sánchez-Villegas, P. (2021). Geographical Variability in Mortality in Urban Areas: A Joint Analysis of 16 Causes of Death. *International Journal of Environmental Research and Public Health, 18*(11), 5664. doi: 10.3390/ijerph18115664
+- Pereyra-Zamora, P., Copete, J. M., Oliva-Arocas, A., Caballero, P., Moncho, J., **Vergara-Hernández, C.**, & Nolasco, A. (2020). Changes in Socioeconomic Inequalities in Amenable Mortality after the Economic Crisis in Cities of the Spanish Mediterranean Coast. *International Journal of Environmental Research and Public Health, 17*(18), 6489. doi: 10.3390/ijerph17186489
+- Oliva-Arocas, A., Pereyra-Zamora, P., Copete, J. M., **Vergara-Hernández, C.**, Martínez-Beneito, M. A., & Nolasco, A. (2020). Socioeconomic inequalities in mortality among foreign-born and Spanish-born in small areas in cities of the mediterranean coast in Spain, 2009–2015. *International Journal of Environmental Research and Public Health, 17*(13), 1–18. doi: 10.3390/ijerph17134672
+- Morales-Suárez-Varela, M., Llopis-González, A., **Vergara-Hernández, C.**, Fernandez-Fabrellas, E., Sanz, F., Perez-Lozano, M. J., Martin, V., Astray, J., Castilla, J., Egurrola, M., Force, L., Toledo, D., & Domínguez, Á. (2017). Asthma in older people hospitalized with influenza in Spain: A case-control study. *Allergy and Asthma Proceedings, 38*(4), 277–285. doi: 10.2500/aap.2017.38.4060
+- Sanchis-Sánchez, E., Salvador-Palmer, R., Codoñer-Franch, P., Martin, J. D., **Vergara-Hernández, C.**, Blasco, J., Ballester, E., Sanchis, E., González-Peña, R., & Cibrián, R. M. (2015). Infrared thermography is useful for ruling out fractures in paediatric emergencies. *European Journal of Pediatrics, 174*(4), 493–499. doi: 10.1007/s00431-014-2425-0
+- Sanchis-Sánchez, E., **Vergara-Hernández, C.**, Cibrián, R. M., Salvador, R., Sanchis, E., & Codoñer-March, P. (2014). Infrared Thermal Imaging in the Diagnosis of Musculoskeletal Injuries: a Systematic Review and Meta-Analysis. *American Journal of Roentgenology, 203*(4), 875–82. doi: 10.2214/AJR.13.11716
+
+
+## Presentaciones en congresos
+
+- Fernández-Iglesias, R., Fernández-Arce, L., Martínez-Pérez, I., **Vergara-Hernández, C.**, Martínez-Beneito, M. A., & Fernández-Somoano, A. (2026). 626—Trends and geographical inequalities in diabetes mellitus mortality in Spanish cities, 1996-2015. *Gaceta Sanitaria, 40*, 116711. doi: 10.1016/S0213-9111(26)00259-1
+- Willame, C., Gini, R., Mira-Iglesias, A., Schink, T., Souverein, P. C., Wang, L., Barbieri, E., Bartolini, C., Paoletti, O., Thurin, N. H., Stona, L., **Vergara-Hernández, C.**, Ehrenstein, V., Martin, M. M., de Burgos, A., Thomsen, R. W., Aragon, M., Villalobos, F., Pallejà-Millán, M., Bolibar, B., Klunge, O. H., Weibel1, D., & Sturkenboom, M. (2021, ago). *Background incidence rates of adverse events of special interest for COVID-19 vaccine monitoring*. Ponencia presentada en la 37th International Conference on Pharmacoepidemiology & Therapeutic Risk Management, Virtual Conference. doi: 10.1002/pds.5305
+- Martínez-Beneito, M. A. &, **Vergara-Hernández, C.** (2019, sep). *Propuesta de un índice de privación en áreas pequeñas de grandes ciudades a partir del censo de 2011*. Ponencia presentada en la XXXVII Reunión Científica de la SEE, Oviedo.
+- Nolasco, A., Melchor, I., Pereyra-Zamora, P., Moncho, J., Caballero, P., Botella-Rocamora, P. & **Vergara-Hernández, C.** (2019, sep). *Desigualdades socioeconómicas en mortalidad en ciudades: proceso de georreferenciación y perfil de las muertes no georreferenciadas en la Comunitat Valenciana*. Ponencia presentada en la XXXVII Reunión Científica de la SEE, Oviedo.
+- Marí-Dell’Olmo, M., **Vergara-Hernández, C.**, Oliveras, L., & Martínez-Beneito, M. A. (2019, jun). *Estimation of an energy poverty index at small area level based on the Barcelona health survey*. Ponencia presentada en la XVII Spanish Biometric Conference and the VII Ibero-American Biometric Meeting - CEB-EIB 2019, Valencia.
+- **Vergara-Hernández, C.** & Martínez-Beneito, M. A. (2019, jun). *Constructing a deprivation index at a census tract level from the Spanish national census of 2011*. Ponencia presentada en la XVII Spanish Biometric Conference and the VII Ibero-American Biometric Meeting - CEB-EIB 2019, Valencia.
+- Nolasco, A., Melchor, I., Pereyra-Zamora, P., Caballero, P., Moncho, J. & **Vergara-Hernández, C.** (2019, sep). *¿Dónde mueren los valencianos? Desigualdades socioeconómicas en el lugar de defunción*. Ponencia presentada en la XXXVII Reunión Científica de la SEE, Oviedo.
+- Martínez-Beneito, M. A., Alberich, C., Botella-Rocamora, P., Corpas-Burgos, F., Pérez-Panedés, J., Estarlich, M., **Vergara-Hernández, C.** & Zurriaga, O. (2018, sep). *Proyecto MEDEA3: nuevos desarrollos para viejos problemas*. Ponencia presentada en la XXXVI Reunión Científica de la SEE, Lisboa.
+- **Vergara-Hernández, C.**, Martínez-Beneito, M. A., Botella-Rocamora, P. & Pérez-Panedés, J. (2018, sep). *Una propuesta de gestión de los cambios en la evolución temporal del seccionado censal en el MEDEA3*. Ponencia presentada en la XXXVI Reunión Científica de la SEE, Lisboa.
+- Morales-Suárez-Varela, M., Llopis-González, A., Huerta-Biosca, V., Cervera-Boada, P., **Vergara-Hernández, C.**, Marí-Bauset, S. & Perales, A. (2015, sep). *Factores de riesgo prenatales, perinatales y neonatales en el desarrollo del trastorno del espectro autista*. Ponencia presentada en el II Congreso Iberoamericano de Epidemiología y Salud Pública, Santiago de Compostela.
+- García-Molina, P., Balaguer-López, E., Sanchis-Sánchez, E., Martos-Torres, J., Álvarez-Ordiales, A., Garrigues-Dura, L., . . . & **Vergara-Hernández, C.** (2014, May). *Procedimiento de uso de una manta de presiones en la evaluación de superficies especiales para el manejo de la presión*. Comunicación oral presentada en la 24th Conference of the European Wound Management Association, Madrid.
+- **Vergara-Hernández, C.**, Megía-Sanz, M. J., & Balanzá-Martínez, V. (2013, Sep). *Estudio bibliométrico comparativo sobre bioética en salud mental y oncología*. Póster presentado en el XVII Congreso Nacional de Psiquiatría, Sevilla.
+
+
+## Libros y capítulos de libro
+
+- Alepuz Vidal, L., Avilés Martínez, M. J., Benítez Martínez, J. C., Casaña Granell, J., Clement Imbernón, J., Fornes Pujalte, B., García Molina, P., Giménez Tébar, J. L., López Casanova, P., Márquez Mendoza, M., Montal Navarro, M. A., Sánchez Lorente, M. M., Sanchis Sánchez, E., Verdú Soriano, J. & **Vergara-Hernández, C.** (2012). *Guía de Práctica Clínica para el Cuidado de Personas con Úlceras por Presión o Riesgo de Padecerlas*. Valencia: Generalitat Valenciana, Conselleria de Sanitat.
+- Sanchis-Sánchez, E., Salvador-Palmer, R., Codoñer-Franch, P., Martín-Guerrero, J., **Vergara-Hernández, C.**, Blasco, J. M., . . . & Cibrián, R. M. (2017). Clinical Applications: Infrared Thermal Diagnosis of Orthopaedic Injuries in Childhood. En R. Vardasca & J. G. Mendes (Eds.), *Innovative Research in Thermal Imaging for Biology and Medicine* (pp. 55-78). Hershey (PA, USA): IGI Global. doi: 10.4018/978-1-5225-2072-6
+- Escrig Giménez, M., **Vergara-Hernández, C.** & Megía Sanz, M. J. (2013). Salud Mental y Bioética desde el análisis métrico de la literatura científica. En M. J. Megía Sanz & J. J. Moreno Murcia (Eds.), *Salud Mental y Bioética. Reflexiones desde una perspectiva multidisciplinar* (pp. 53-61). Valencia: Generalitat Valenciana, Conselleria de Sanitat.
